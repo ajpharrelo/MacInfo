@@ -1,11 +1,14 @@
 {
   "name": "mac-info",
   "version": "1.0.0",
-  "description": "Get information about a mac adress",
+  "description": "Basic API to retrieve information about an MAC address.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aj Obaze",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
