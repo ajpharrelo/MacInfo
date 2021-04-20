@@ -1,0 +1,11 @@
+{
+  "name": "mac-info",
+  "version": "1.0.0",
+  "description": "Get information about a mac adress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aj Obaze",
+  "license": "ISC"
+}
