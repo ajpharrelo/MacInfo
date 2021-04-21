@@ -12,7 +12,7 @@ app.get('/api/GetMacInfo/All/:mac', (req, res) => {
             res.json(data)
         })
         .catch(error => {
-            res.json(error)
+            res.json({error: true, message: error})
         })
 })
 app.listen(process.env.PORT || 3000);
