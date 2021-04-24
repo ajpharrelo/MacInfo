@@ -37,7 +37,7 @@ macInfo.All(mac)
 
     macInfo.companyName(mac)
         .then(data => {
-            // Data = string "Example Company"
+            // Data = "Example Company"
         })
         .catch(error => {
             // Handle if error is caught
@@ -51,7 +51,7 @@ macInfo.All(mac)
 
     macInfo.companyAddress(mac)
         .then(data => {
-            // Data = string "123 Baker street"
+            // Data = "123 Baker street"
         })
         .catch(error => {
             // Handle if error is caught
@@ -64,7 +64,7 @@ macInfo.All(mac)
 
     macInfo.countryCode(mac)
         .then(data => {
-            // Data = string "GB"
+            // Data = "GB"
         })
         .catch(error => {
             // Handle if error is caught
