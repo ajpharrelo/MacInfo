@@ -10,7 +10,8 @@ You can give it a try here on my own implemented version [Live Demo](https://aja
 
 
 ### Usage
-Retrieve all MAC address information
+Retrieve all MAC address information.
+
 ```js
 const macInfo = require('./macinfo')
 
@@ -33,7 +34,7 @@ macInfo.All(mac)
       console.log(data)
   })
   .catch(error => {
-      // Handle if error is caught
+      // Handle error
   })
 ```
 
