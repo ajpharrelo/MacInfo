@@ -34,6 +34,26 @@ app.get('/api/mac-db/', (req, res) => {
                 })
             break;
 
+        case "companyaddress":
+            macInfo.companyAddress(mac)
+                .then(data => {
+                    res.json(data)
+                })
+                .catch(error => {
+                    res.sendStatus(400)
+                })
+            break;
+
+        case "countrycode":
+            macInfo.countryCode(mac)
+                .then(data => {
+                    res.json(data)
+                })
+                .catch(error => {
+                    res.sendStatus(400)
+                })
+            break;
+
         default:
             res.sendStatus(400)
     }

@@ -1,5 +1,7 @@
 const macDB = require('./data/macdb.json')
 
+//TODO: Need to add functionality to sort MAC Addresses properly rather than just sorting to the first 3 bytes.
+
 /**
 * Validates the MAC address, returns false if MAC is invalid.
 * @param {string} MAC
@@ -53,7 +55,7 @@ function companyName(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.companyName)
+        resolve(info.companyName === "" ? "Private" : info.countryCode)
     })
 }
 
@@ -66,12 +68,12 @@ function companyAddress(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.companyAddress)
+        resolve(info.companyAddress === "" ? "Private" : info.countryCode)
     })
 }
 
 /**
- * Retrieves the MAC address' owning company address, will return blank if company info is private.
+ * Retrieves the MAC address' country code, will return "Private" if company info is private.
  * @param {string} MAC
  * @returns {Promise<string>}
  */
