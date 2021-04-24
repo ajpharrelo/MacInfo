@@ -31,7 +31,7 @@ macInfo.All(mac)
   })
 ```
 
-Retrieve MAC address company name
+### Retrieve MAC address company name
 ```js
     const macInfo = require('./macinfo')
 
@@ -45,7 +45,7 @@ Retrieve MAC address company name
 ```
 
 
-Retrieve MAC address company address
+### Retrieve MAC address company address
 ```js
     const macInfo = require('./macinfo')
 
@@ -58,7 +58,7 @@ Retrieve MAC address company address
         })
 ```
 
-Retrieve MAC address country code
+### Retrieve MAC address country code
 ```js
     const macInfo = require('./macinfo')
 
