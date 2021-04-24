@@ -27,6 +27,6 @@ macInfo.All(mac)
       console.log(data)
   })
   .catch(error => {
-      // Handle error
+      // Promise rejection is returned as a boolean.
   })
 ```
