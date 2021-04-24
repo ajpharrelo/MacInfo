@@ -7,33 +7,44 @@ const macDB = require('./data/macdb.json')
 *
  */
 function validateMAC(MAC){
-    return !(MAC.length > 17 || MAC.length < 17);
+    if(MAC.length === 17){
+        let found = macDB.filter(mac => mac.oui === MAC.substring(0, 8).toUpperCase())
+        if(found.length > 0) return found[0]
+        return false
+    }
+    return false
 }
+
 
 
 /**
  * Reads the MAC address and returns All information if MAC address is valid
- * @param macAddr
+ * @param MAC
  * @returns {Promise<Array>}
  */
-function All(macAddr){
+function All(MAC){
     return new Promise((resolve, reject) => {
-        if(!validateMAC(macAddr)) reject('You must supply a valid MAC address')
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
         else{
-            let found = macDB.filter(mac => mac.oui === macAddr.substring(0, 8).toUpperCase())
-            if(found.length > 0){
-                resolve(found[0])
-            }
-            else {
-                reject('Invalid MAC address')
-            }
+            resolve(info)
         }
     })
 }
 
-function companyName(macAddr){
+
+/*
+* Returns MAC Address company name, will return "Private" if company info is private.
+* @param MAC
+ */
+function companyName(MAC){
     return new Promise((resolve, reject) => {
-        if(!validateMAC(macAddr)) reject('You must supply a valid MAC address')
+
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        console.log(info.companyName)
+        resolve(info.companyName)
+
     })
 }
 
