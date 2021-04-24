@@ -1,4 +1,4 @@
-# MacInfoJS
+# MacInfo
 Basic API to retrieve information about an MAC address, for NodeJS.
 
 #### IMPORTANT: The JSON file for MAC address information is 12.5 MB - Be aware.
