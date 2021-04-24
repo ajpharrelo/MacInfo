@@ -8,12 +8,27 @@ Retrieve all MAC address information
 ```js
 const macInfo = require('./macinfo')
 
-// Returns a promise
+// Retrieve all information about a mac
 macInfo.All(mac)
   .then(data => {
-      res.json(data)
+      /*
+        * Data is returned as an array.
+        * 
+        {
+          "oui":"00:0E:22",
+          "isPrivate":1,
+          "companyName":"Private",
+          "companyAddress":"",
+          "countryCode":"",
+          "assignmentBlockSize":"MA-L",
+          "dateCreated":"2004-02-12",
+          "dateUpdated":"2004-02-12"
+        }
+      */
+      
+      // Do something with data
   })
   .catch(error => {
-      res.sendStatus(400)
+      // Handle error
   })
 ```
