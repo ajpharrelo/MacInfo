@@ -7,8 +7,7 @@ const macDB = require('./data/macdb.json')
 *
  */
 function validateMAC(MAC){
-    if(MAC.length > 17 || MAC.length < 17) return false
-    return true
+    return !(MAC.length > 17 || MAC.length < 17);
 }
 
 
@@ -19,7 +18,7 @@ function validateMAC(MAC){
  */
 function All(macAddr){
     return new Promise((resolve, reject) => {
-        if(!validateMAC(macAddr)) reject('You must supply a valid mac address')
+        if(!validateMAC(macAddr)) reject('You must supply a valid MAC address')
         else{
             let found = macDB.filter(mac => mac.oui === macAddr.substring(0, 8).toUpperCase())
             if(found.length > 0){
@@ -32,6 +31,13 @@ function All(macAddr){
     })
 }
 
+function companyName(macAddr){
+    return new Promise((resolve, reject) => {
+        if(!validateMAC(macAddr)) reject('You must supply a valid MAC address')
+    })
+}
+
 module.exports = {
-    All
+    All,
+    companyName
 }
