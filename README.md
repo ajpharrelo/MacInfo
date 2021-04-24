@@ -8,7 +8,6 @@ Retrieve all MAC address information
 ```js
 const macInfo = require('./macinfo')
 
-// Retrieve all information about a mac
 macInfo.All(mac)
   .then(data => {
       /*
