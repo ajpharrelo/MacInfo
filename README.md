@@ -6,11 +6,14 @@ Basic API to retrieve information about an MAC address.
 Retrieve all MAC address information
 
 ```js
-/**
-* Validates the MAC address, returns false if MAC is invalid.
-* @param {string} MAC
-* @returns {boolean}
-*
- */
-validateMAC(MAC)
+const macInfo = require('./macinfo')
+
+// Returns a promise
+macInfo.All(mac)
+  .then(data => {
+      res.json(data)
+  })
+  .catch(error => {
+      res.sendStatus(400)
+  })
 ```
