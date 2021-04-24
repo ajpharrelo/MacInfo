@@ -1,8 +1,8 @@
 const macDB = require('./data/macdb.json')
 
-/*
+/**
 * Validates the MAC address, returns false if MAC is invalid.
-* @param MAC
+* @param {string} MAC
 * @returns {boolean}
 *
  */
@@ -15,11 +15,9 @@ function validateMAC(MAC){
     return false
 }
 
-
-
 /**
- * Reads the MAC address and returns All information if MAC address is valid
- * @param MAC
+ * Reads the MAC address and returns all information if MAC address is valid
+ * @param {string} MAC
  * @returns {Promise<Array>}
  */
 function All(MAC){
@@ -32,23 +30,64 @@ function All(MAC){
     })
 }
 
-
-/*
-* Returns MAC Address company name, will return "Private" if company info is private.
-* @param MAC
+/**
+* Retrieves the MAC address' owning company name, will return "Private" if company info is private.
+* @param {string} MAC
+* @returns {Promise<string>}
  */
 function companyName(MAC){
     return new Promise((resolve, reject) => {
-
         let info = validateMAC(MAC)
         if(!info) reject(true)
         console.log(info.companyName)
         resolve(info.companyName)
-
     })
 }
 
+/**
+ * Retrieves the MAC address' owning company name, will return "Private" if company info is private.
+ * @param {string} MAC
+ * @returns {Promise<string>}
+ */
+function companyName(MAC){
+    return new Promise((resolve, reject) => {
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        resolve(info.companyName)
+    })
+}
+
+/**
+ * Retrieves the MAC address' owning company address, will return blank if company info is private.
+ * @param {string} MAC
+ * @returns {Promise<string>}
+ */
+function companyAddress(MAC){
+    return new Promise((resolve, reject) => {
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        resolve(info.companyAddress)
+    })
+}
+
+/**
+ * Retrieves the MAC address' owning company address, will return blank if company info is private.
+ * @param {string} MAC
+ * @returns {Promise<string>}
+ */
+function countryCode(MAC){
+    return new Promise((resolve, reject) => {
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        resolve(info.countryCode === "" ? "Private" : info.countryCode)
+    })
+}
+
+
+
 module.exports = {
     All,
-    companyName
+    companyName,
+    companyAddress,
+    countryCode
 }

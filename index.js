@@ -8,11 +8,11 @@ app.use(express.json({ limit: "1kb" }))
 
 app.get('/api/mac-db/', (req, res) => {
     let mac = req.query.mac
-    let mode = req.query.mode
+    let filter = req.query.filter
 
-    if(!mode || !mac) res.sendStatus(400)
+    if(!filter || !mac) res.sendStatus(400)
 
-    switch (mode)
+    switch (filter)
     {
         case "all":
             macInfo.All(mac)
