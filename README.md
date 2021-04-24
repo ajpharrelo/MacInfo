@@ -40,7 +40,7 @@ macInfo.All(mac)
             // Data = "Example Company"
         })
         .catch(error => {
-            // Handle if error is caught
+            // Handle error
         })
 ```
 
@@ -54,7 +54,7 @@ macInfo.All(mac)
             // Data = "123 Baker street"
         })
         .catch(error => {
-            // Handle if error is caught
+            // Handle error
         })
 ```
 
@@ -67,7 +67,7 @@ macInfo.All(mac)
             // Data = "GB"
         })
         .catch(error => {
-            // Handle if error is caught
+            // Handle error
         })
 ```
 
