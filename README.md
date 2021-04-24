@@ -1,12 +1,17 @@
 # MacInfoJS
 Basic API to retrieve information about an MAC address, for NodeJS.
 
+### IMPORTANT: The JSON storage file for MAC address information is 12.5 MB - Be aware.
+
 
 ### Usage
 Retrieve all MAC address information
 
 ### Why ?
-I recently needed a way to view information about an MAC address in one of my projects so after some searching I found a MAC Address information database in JSON format, which gave me the inital idea to create a
+I recently needed a way to view information about an MAC address in one of my projects so after some searching I found a MAC Address information database in JSON format, which gave me the inital idea to create a basic API solution to fufill my needs.
+
+You can give it a try here on my own implemented version
+
 
 ```js
 const macInfo = require('./macinfo')
