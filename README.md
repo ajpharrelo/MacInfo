@@ -12,8 +12,7 @@ const macInfo = require('./macinfo')
 macInfo.All(mac)
   .then(data => {
       /*
-        * Data is returned as an array.
-        * 
+        * Promise resolve returned as an array
         {
           "oui":"00:0E:22",
           "isPrivate":1,
@@ -25,8 +24,7 @@ macInfo.All(mac)
           "dateUpdated":"2004-02-12"
         }
       */
-      
-      // Do something with data
+      console.log(data)
   })
   .catch(error => {
       // Handle error
