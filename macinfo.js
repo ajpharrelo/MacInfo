@@ -33,20 +33,6 @@ function All(MAC){
 }
 
 /**
-* Retrieves the MAC address' owning company name, will return "Private" if company info is private.
-* @param {string} MAC
-* @returns {Promise<string>}
- */
-function companyName(MAC){
-    return new Promise((resolve, reject) => {
-        let info = validateMAC(MAC)
-        if(!info) reject(true)
-        console.log(info.companyName)
-        resolve(info.companyName)
-    })
-}
-
-/**
  * Retrieves the MAC address' owning company name, will return "Private" if company info is private.
  * @param {string} MAC
  * @returns {Promise<string>}
@@ -55,7 +41,7 @@ function companyName(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.companyName === "" ? "Private" : info.countryCode)
+        resolve(info.companyName)
     })
 }
 
@@ -84,7 +70,6 @@ function countryCode(MAC){
         resolve(info.countryCode === "" ? "Private" : info.countryCode)
     })
 }
-
 
 
 module.exports = {
