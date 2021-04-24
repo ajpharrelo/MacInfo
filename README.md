@@ -15,7 +15,7 @@ macInfo.All(mac)
         {
           "oui":"00:00:00",
           "isPrivate":0,
-          "companyName":"Example Companu",
+          "companyName":"Example Company",
           "companyAddress":"123 Baker Street",
           "countryCode":"GB",
           // The block size of an OUI (MA-S: small, MA-M: medium, MA-L: Large)
