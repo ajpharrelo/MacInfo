@@ -11,12 +11,12 @@ const macDB = require('./data/macdb.json')
 function validateMAC(MAC){
     if(MAC.length === 17){
         let found = macDB.filter(
-            // MA-L
-            mac => mac.oui === MAC.substring(0, 8).toUpperCase()
+            // MA-S
+            mac => mac.oui === MAC.substring(0, 13).toUpperCase()
             // MA-M
             || mac.oui === MAC.substring(0, 10).toUpperCase()
-            // MA-S
-            || mac.oui === MAC.substring(0, 13).toUpperCase()
+            // MA-L
+            || mac.oui === MAC.substring(0, 8).toUpperCase()
         )
         if(found.length > 0) return found[0]
         return false
