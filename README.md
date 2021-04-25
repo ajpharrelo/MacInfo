@@ -9,16 +9,19 @@ I recently needed a way to view information about an MAC address in one of my pr
 You can give it a try here on my own implemented version [Live Demo](https://ajaeobaze.co.uk/macdemo)
 
 ### Installation
-Make sure to run ```js npm i``` before running to install needed packages.
+Make sure to run ```npm i``` before running to install needed packages.
 
 Required packages for **Demo**
-- Express
+- ExpressJS
 
 Required packages for **macinfo**
 - None
 
+### Demo
+```node index```
+Navigate to, [localhost:3000](http://localhost:3000/?filter=all&mac=20:7c:8f:12:5e:c3) to see it in live action.
 
-### Usage
+### macinfo Usage
 Retrieve all MAC address information.
 
 ```js
