@@ -6,7 +6,7 @@ Basic API to retrieve information about an MAC address, for NodeJS.
 #### IMPORTANT: The JSON file for MAC address information is 12.5 MB - Be aware.
 
 ### Why ?
-I recently needed a way to view information about an MAC address in one of my projects so after some searching I found a MAC Address information database in JSON format, which gave me the inital idea to create a basic API solution to fufill my needs.
+I recently needed a way to view information about an MAC address in one of my projects so after some searching I found a MAC Address information database that I could export  in JSON format, which gave me the inital idea to create a basic API solution to fufill my needs.
 
 ### Installation
 Make sure to run ```npm i``` before running to install needed packages.
