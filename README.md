@@ -8,6 +8,16 @@ I recently needed a way to view information about an MAC address in one of my pr
 
 You can give it a try here on my own implemented version [Live Demo](https://ajaeobaze.co.uk/macdemo)
 
+### Installation
+Make sure to run ```bash npm i``` before running to install needed packages.
+
+Required packages 
+**Demo**
+- Express
+
+**macinfo**
+- None
+
 
 ### Usage
 Retrieve all MAC address information.
