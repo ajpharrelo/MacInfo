@@ -11,11 +11,10 @@ You can give it a try here on my own implemented version [Live Demo](https://aja
 ### Installation
 Make sure to run ```bash npm i``` before running to install needed packages.
 
-Required packages 
-**Demo**
+Required packages for **Demo**
 - Express
 
-**macinfo**
+Required packages for **macinfo**
 - None
 
 
