@@ -11,11 +11,11 @@ const macDB = require('./data/macdb.json')
 function validateMAC(MAC){
     if(MAC.length === 17){
         let found = macDB.filter(
-            // MA-S
+            // Checks small size blocksMA-S
             mac => mac.oui === MAC.substring(0, 13).toUpperCase()
-            // MA-M
+            // Checks Medium size blocks (MA-M)
             || mac.oui === MAC.substring(0, 10).toUpperCase()
-            // MA-L
+            // Checks Large size -L
             || mac.oui === MAC.substring(0, 8).toUpperCase()
         )
         if(found.length > 0) return found[0]
@@ -25,7 +25,7 @@ function validateMAC(MAC){
 }
 
 /**
- * Reads the MAC address and returns all information if MAC address is valid
+ * Returns all information about a MAC address, if MAC is valid.
  * @param {string} MAC
  * @returns {Promise<Array>}
  */
