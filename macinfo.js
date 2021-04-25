@@ -53,7 +53,7 @@ function companyName(MAC){
 }
 
 /**
- * Retrieves the MAC address' owning company address, will return blank if company info is private.
+ * Retrieves the MAC address' owning company address, will return "Private" if company info is private.
  * @param {string} MAC
  * @returns {Promise<string>}
  */
@@ -61,7 +61,7 @@ function companyAddress(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.companyAddress === "" ? "Private" : info.countryCode)
+        resolve(info.companyAddress === "" ? "Private" : info.companyAddress)
     })
 }
 
