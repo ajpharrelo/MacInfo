@@ -11,7 +11,7 @@ const macDB = require('./data/macdb.json')
 function validateMAC(MAC){
     if(MAC.length === 17){
         let found = macDB.filter(
-            // Checks small size blocksMA-S
+            // Checks small size blocks MA-S
             mac => mac.oui === MAC.substring(0, 13).toUpperCase()
             // Checks Medium size blocks (MA-M)
             || mac.oui === MAC.substring(0, 10).toUpperCase()
