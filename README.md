@@ -19,6 +19,7 @@ Required packages for **macinfo**
 
 ### Demo
 ```node index```
+<br />
 Navigate to [localhost:3000](http://localhost:3000/?filter=all&mac=20:7c:8f:12:5e:c3) to see it in live action.
 
 ### macinfo Usage
