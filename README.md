@@ -22,6 +22,15 @@ Run the command
 ```js
   node index
 ```
+Make sure query parameters ```filter``` and ```mac``` are set
+
+Filter options
+- all (Returns all info as an JSON object)
+- companyname (Returns company name as string)
+- companyaddress (Returns company address as string)
+- country code (Returns MAC address creation country as string "GB, US, CH" etc)
+
+
 Navigate to [localhost:3000](http://localhost:3000/?filter=all&mac=20:7c:8f:12:5e:c3) to see it in action.
 
 ### macinfo Usage
