@@ -18,6 +18,7 @@ Required packages for **macinfo**
 - None
 
 ### Demo
+Run the command
 ```js
   node index
 ```
