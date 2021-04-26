@@ -1,5 +1,6 @@
 ### Update
-So after some feedback from multiple people it would seem that this project is useless in the eyes of others so I'm not too sure what im going to do with it in terms of progress/updates, as my first published repository I have learned from my mistakes and will not make useless things anymore, if you still would like to use it feel free, I will keep the repo open permanently, thank you.
+So after some feedback from multiple people it would seem that this project is useless in the eyes of others so, as this my first published repository I have learned from my mistakes and will not make useless things anymore, if you still would like to use this feel free I will keep the repo open permanently and add updates periodically, thank you.
+<br />
 *Ajae*
 
 # MacInfo
