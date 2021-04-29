@@ -10,15 +10,18 @@ const macDB = require('./data/macdb.json')
  */
 function validateMAC(MAC){
     if(MAC.length === 17){
-        let found = macDB.filter(
-            // Checks small size blocks MA-S
-            mac => mac.oui === MAC.substring(0, 13).toUpperCase()
-            // Checks Medium size blocks (MA-M)
-            || mac.oui === MAC.substring(0, 10).toUpperCase()
-            // Checks Large size -L
-            || mac.oui === MAC.substring(0, 8).toUpperCase()
-        )
-        if(found.length > 0) return found[0]
+        let MA_S = macDB.filter(mac => mac.oui === MAC.substring(0, 13).toUpperCase())
+        let MA_M = macDB.filter(mac => mac.oui === MAC.substring(0, 10).toUpperCase())
+        let MA_L = macDB.filter(mac => mac.oui === MAC.substring(0, 8).toUpperCase())
+
+        let returnMac = [];
+
+        if(MA_L.length > 0) returnMac.push(MA_L[0])
+        if(MA_M.length > 0) returnMac.push(MA_M[0])
+        if(MA_S.length > 0) returnMac.push(MA_S[0])
+
+        if(returnMac.length > 0) return returnMac
+
         return false
     }
     return false
@@ -93,7 +96,7 @@ function oui(MAC){
 }
 
 /**
- * Retrieves the MAC address' Assignment Block Size.
+ * Retrieves the MAC address' Assignment Block Size (MA-S, MA-M, MA-L)
  * @param {string} MAC
  * @returns {Promise<string>}
  */
