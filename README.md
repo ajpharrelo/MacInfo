@@ -123,7 +123,7 @@ macInfo.All(mac)
 ```
 
 ### Retrieve MAC address blockSizes
-If, there are more than two objects in the array first result is the largest blocksize (MA-L) 
+If there are more than two objects in the array first result is the largest blocksize (MA-L) 
 which is probably the smaller block sizes registration authority
 ```js
     const macInfo = require('./macinfo')
