@@ -92,10 +92,24 @@ function oui(MAC){
     })
 }
 
+/**
+ * Retrieves the MAC address' Assignment Block Size.
+ * @param {string} MAC
+ * @returns {Promise<string>}
+ */
+function blockSize(MAC){
+    return new Promise((resolve, reject) => {
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        resolve(info.assignmentBlockSize)
+    })
+}
+
 module.exports = {
     All,
     companyName,
     companyAddress,
     countryCode,
-    oui
+    oui,
+    blockSize
 }
