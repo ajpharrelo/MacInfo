@@ -79,6 +79,19 @@ function countryCode(MAC){
 }
 
 
+/**
+ * Retrieves the MAC address' OUI.
+ * @param {string} MAC
+ * @returns {Promise<string>}
+ */
+function oui(MAC){
+    return new Promise((resolve, reject) => {
+        let info = validateMAC(MAC)
+        if(!info) reject(true)
+        resolve(info.oui)
+    })
+}
+
 module.exports = {
     All,
     companyName,
