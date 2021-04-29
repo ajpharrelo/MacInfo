@@ -51,15 +51,16 @@ function All(MAC){
 function companyName(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
-        let cNames = []
+        if(!info) reject(true)
+        let companyNames = []
 
         for(let i = 0, len = info.length; i < len; i++) {
             // To retrieve the corresponding block-size for better context
             // {name: info[i].companyName, blockSize: info[i].assignmentBlockSize}
-            cNames.push(info[i].companyName)
+            companyNames.push(info[i].companyName)
         }
 
-        resolve(cNames)
+        resolve(companyNames)
 
     })
 }
@@ -73,7 +74,13 @@ function companyAddress(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.companyAddress === "" ? "Private" : info.companyAddress)
+        let companyAddr = []
+
+        for(let i = 0, len = info.length; i < len; i++) {
+            companyAddr.push(info[i].companyAddress)
+        }
+
+        resolve(companyAddr)
     })
 }
 
@@ -86,7 +93,13 @@ function countryCode(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.countryCode === "" ? "Private" : info.countryCode)
+        let countryCodes = []
+
+        for(let i = 0, len = info.length; i < len; i++) {
+            countryCodes.push(info[i].countryCode === "" ? "Private" : info[i].countryCode)
+        }
+
+        resolve(countryCodes)
     })
 }
 
@@ -100,7 +113,13 @@ function oui(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.oui)
+        let oui_s = []
+
+        for(let i = 0, len = info.length; i < len; i++) {
+            oui_s.push(info[i].oui)
+        }
+
+        resolve(oui_s)
     })
 }
 
@@ -113,7 +132,13 @@ function blockSize(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
         if(!info) reject(true)
-        resolve(info.assignmentBlockSize)
+        let blockSizes = []
+
+        for(let i = 0, len = info.length; i < len; i++) {
+            blockSizes.push(info[i].assignmentBlockSize)
+        }
+
+        resolve(blockSizes)
     })
 }
 
