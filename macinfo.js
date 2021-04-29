@@ -5,11 +5,12 @@ const macDB = require('./data/macdb.json')
 /**
 * Validates the MAC address, returns false if MAC is invalid.
 * @param {string} MAC
-* @returns {boolean}
+* @returns {Array}
 *
  */
 function validateMAC(MAC){
     if(MAC.length === 17){
+
         let MA_S = macDB.filter(mac => mac.oui === MAC.substring(0, 13).toUpperCase())
         let MA_M = macDB.filter(mac => mac.oui === MAC.substring(0, 10).toUpperCase())
         let MA_L = macDB.filter(mac => mac.oui === MAC.substring(0, 8).toUpperCase())
@@ -22,7 +23,7 @@ function validateMAC(MAC){
 
         if(returnMac.length > 0) return returnMac
 
-        return false
+        else return false
     }
     return false
 }
@@ -50,8 +51,16 @@ function All(MAC){
 function companyName(MAC){
     return new Promise((resolve, reject) => {
         let info = validateMAC(MAC)
-        if(!info) reject(true)
-        resolve(info.companyName)
+        let cNames = []
+
+        for(let i = 0, len = info.length; i < len; i++) {
+            // To retrieve the corresponding block-size for better context
+            // {name: info[i].companyName, blockSize: info[i].assignmentBlockSize}
+            cNames.push(info[i].companyName)
+        }
+
+        resolve(cNames)
+
     })
 }
 
