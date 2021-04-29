@@ -24,7 +24,7 @@ Required packages for **macinfo**
 
 ### Demo
 Run the command
-```js
+```
   node index
 ```
 Make sure query parameters ```filter``` and ```mac``` are set.
