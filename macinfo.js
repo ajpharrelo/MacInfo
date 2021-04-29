@@ -96,5 +96,6 @@ module.exports = {
     All,
     companyName,
     companyAddress,
-    countryCode
+    countryCode,
+    oui
 }
