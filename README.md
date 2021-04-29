@@ -1,5 +1,5 @@
 ### Update
-So after some feedback from multiple people it would seem that this project is useless in the eyes of others so, as this my first published repository I have learned from my mistakes and will not make useless things anymore, if you still would like to use this feel free I will keep the repo open permanently and add updates periodically, thank you.
+As my first repo, I'm happy how it has done in terms of visibility, I will continue to update it as I have been.
 <br />
 *Ajae*
 
