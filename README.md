@@ -109,6 +109,35 @@ macInfo.All(mac)
         })
 ```
 
+### Retrieve MAC address OUI
+```js
+    const macInfo = require('./macinfo')
+
+    macInfo.oui(mac)
+        .then(data => {
+            // Data = ["12:34:56","12:34:56:7","12:34:56:78:9"]
+        })
+        .catch(error => {
+            // Handle error
+        })
+```
+
+### Retrieve MAC address blockSizes
+If, there are more than two objects in the array first result is the largest blocksize (MA-L) 
+which is probably the smaller block sizes registration authority
+```js
+    const macInfo = require('./macinfo')
+
+    macInfo.blockSize(mac)
+        .then(data => {
+            // Data = ["MA-L","MA-M","MA-S", "IAB"]
+        })
+        .catch(error => {
+            // Handle error
+        })
+```
+
+
 ### License
 License for this repository is: [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
